@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,7 +24,6 @@ public class MainActivity2 extends AppCompatActivity {
     private ImageView main_IMG_Card1;
     private ImageView main_IMG_Card2;
     private ArrayList<Integer> arr;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +37,8 @@ public class MainActivity2 extends AppCompatActivity {
         main_BTN_startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                playSound(R.raw.snd_cards);
                 create();
-
             }
         });
         try {
@@ -123,6 +122,27 @@ public class MainActivity2 extends AppCompatActivity {
         outState.putInt("MY_INT1", counter1);
         outState.putInt("MY_INT2", counter2);
     }
+    private MediaPlayer mp;
+    private void playSound(int rawSound) {
+        if (mp != null) {
+            try {
+                mp.reset();
+                mp.release();
+            } catch (Exception ex) { }
+        }
+
+        mp = MediaPlayer.create(this, rawSound);
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+                mp.release();
+                mp = null;
+            }
+        });
+        mp.start();
+    }
+
     @Override
     protected void onStart() {
         Log.d("pttt", "onStart");

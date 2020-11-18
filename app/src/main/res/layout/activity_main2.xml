@@ -19,7 +19,8 @@
         android:textAllCaps="false"
         android:textSize="34sp"
         android:backgroundTint="#F44336"
-        app:icon="@android:drawable/ic_media_play" />
+        app:icon="@android:drawable/ic_media_play"
+        android:soundEffectsEnabled="false"/>
 
     <TextView
         android:id="@+id/main_LBL_player1"
