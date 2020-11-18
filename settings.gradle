@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Oz_Tal_Application_Project"
