@@ -33,10 +33,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:backgroundTint="#FFEB3B"
-        android:text="Close"
         android:layout_centerHorizontal="true"
         android:textAllCaps="true"
         android:textColor="@color/black"
+        android:text="back to new game"
         android:textSize="25sp" />
 
 </RelativeLayout>

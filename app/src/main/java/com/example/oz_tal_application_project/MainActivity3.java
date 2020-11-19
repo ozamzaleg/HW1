@@ -3,9 +3,7 @@ package com.example.oz_tal_application_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,39 +27,10 @@ public class MainActivity3 extends AppCompatActivity {
         score_BTN_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity3.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
-    }
-    @Override
-    protected void onStart() {
-        Log.d("pttt", "onStart");
-        super.onStart();
-
-    }
-
-    @Override
-    protected void onResume() {
-        Log.d("pttt", "onResume");
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.d("pttt", "onPause");
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.d("pttt", "onStop");
-        super.onStop();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.d("pttt", "onDestroy");
-        super.onDestroy();
     }
 }

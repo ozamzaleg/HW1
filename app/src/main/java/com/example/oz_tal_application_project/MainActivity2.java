@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
+    final int FOUR=4;
+    final int ONE=1;
     private int counter1 = 0;
     private int counter2 = 0;
     private TextView main_LBL_counter1;
@@ -24,6 +26,7 @@ public class MainActivity2 extends AppCompatActivity {
     private ImageView main_IMG_Card1;
     private ImageView main_IMG_Card2;
     private ArrayList<Integer> arr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +53,8 @@ public class MainActivity2 extends AppCompatActivity {
                 main_LBL_counter1.setText("" + counter1);
                 main_LBL_counter2.setText(""+counter2);
             }
-        } catch (Exception ex) { }
-
+        } catch (Exception ex) {
+        }
     }
     private void image() {
 
@@ -79,13 +82,12 @@ public class MainActivity2 extends AppCompatActivity {
             arr.remove(index);
                 number1= (Integer.parseInt(str1.substring(str1.length() - 2)));
                 number2=(Integer.parseInt(str2.substring(str2.length() - 2)));
-                if ((number1/4 + 1) > (number2/4+1)) {
-                    increaseCounter1();
-                } else if((number1/4 + 1) < (number2/4+1))
-                    increaseCounter2();
-                else if((number1/4 + 1) == (number2/4+1)){
-                    increaseCounter1();
-                    increaseCounter2();
+                if ((number1/FOUR + ONE) > (number2/FOUR+ONE)) {
+                    counter1++;
+                    main_LBL_counter1.setText("" + counter1);
+                } else if((number1/FOUR + ONE) < (number2/FOUR+ONE)) {
+                    counter2++;
+                    main_LBL_counter2.setText("" + counter2);
                 }
         }else {
             Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
@@ -104,19 +106,6 @@ public class MainActivity2 extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
-    }
-
-    private void increaseCounter1() {
-        counter1++;
-        main_LBL_counter1.setText("" + counter1);
-        Log.d("pttt", "" + counter1);
-    }
-    private void increaseCounter2() {
-        counter2++;
-        main_LBL_counter2.setText("" + counter2);
-        Log.d("pttt", "" + counter2);
-        Log.d("pttt", "" + counter1);
     }
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
@@ -146,35 +135,4 @@ public class MainActivity2 extends AppCompatActivity {
         mp.start();
     }
 
-    @Override
-    protected void onStart() {
-        Log.d("pttt", "onStart");
-        super.onStart();
-
-    }
-
-    @Override
-    protected void onResume() {
-        Log.d("pttt", "onResume");
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.d("pttt", "onPause");
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.d("pttt", "onStop");
-        super.onStop();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.d("pttt", "onDestroy");
-        super.onDestroy();
-    }
 }
