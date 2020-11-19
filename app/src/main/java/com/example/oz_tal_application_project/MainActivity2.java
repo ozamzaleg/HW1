@@ -53,8 +53,6 @@ public class MainActivity2 extends AppCompatActivity {
         } catch (Exception ex) { }
 
     }
-
-
     private void image() {
 
         Field[] images = R.drawable.class.getFields();
@@ -69,7 +67,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void create() {
         int number1,number2;
-        if(arr.size()>0) {
+        if(!arr.isEmpty()) {
             Random rnd = new Random();
             int index = rnd.nextInt(arr.size());
             main_IMG_Card1.setImageResource(arr.get(index));
@@ -92,11 +90,16 @@ public class MainActivity2 extends AppCompatActivity {
         }else {
             Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
             if (counter2 < counter1) {
+                playSound(R.raw.snd_win);
                 intent.putExtra("EXTRA_SESSION_ID", "PLAYER 1 WIN");
+                intent.putExtra("EXTRA_SESSION_ID1", "SCORE:"+counter1);
             } else if ( counter1 < counter2) {
+                playSound(R.raw.snd_win);
                 intent.putExtra("EXTRA_SESSION_ID", "PLAYER 2 WIN");
+                intent.putExtra("EXTRA_SESSION_ID1", "SCORE:"+counter2);
             } else if ( counter1 == counter2) {
                 intent.putExtra("EXTRA_SESSION_ID", "TIE");
+                intent.putExtra("EXTRA_SESSION_ID1", "SCORE:"+counter2);
             }
             startActivity(intent);
             finish();
