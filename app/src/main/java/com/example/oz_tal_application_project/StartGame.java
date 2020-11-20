@@ -4,23 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    private Button button;
+public class StartGame extends AppCompatActivity {
+    private Button BTN_newGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        button = findViewById(R.id.main_BTN_start);
-        button.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_start_game);
+        BTN_newGame = findViewById(R.id.BTN_newGame);
+        BTN_newGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                Intent intent = new Intent(StartGame.this, Game.class);
                 startActivity(intent);
                 finish();
             }

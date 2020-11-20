@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/Theme.Oz_Tal_Application_Project">
-        <activity android:name=".MainActivity3" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Winner" />
+        <activity android:name=".Game" />
+        <activity android:name=".StartGame">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

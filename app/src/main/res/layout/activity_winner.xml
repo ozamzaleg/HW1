@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/winner"
-    tools:context=".MainActivity3">
+    tools:context=".Winner">
 
     <TextView
-        android:id="@+id/score_LBL_title"
+        android:id="@+id/LBL_theWinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -18,17 +18,17 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/main_LBL_scoreWinner"
+        android:id="@+id/LBL_scoreWinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/score_LBL_title"
+        android:layout_below="@+id/LBL_theWinner"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textDirection="ltr"
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:id="@+id/score_BTN_close"
+        android:id="@+id/BTN_newGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
