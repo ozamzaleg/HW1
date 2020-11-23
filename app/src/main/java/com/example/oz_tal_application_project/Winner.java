@@ -17,11 +17,11 @@ public class Winner extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner);
         LBL_theWinner=findViewById(R.id.LBL_theWinner);
-        String sessionId = getIntent().getStringExtra("WINNER");
-        LBL_theWinner.setText(sessionId);
+        String theWinner = getIntent().getStringExtra("WINNER");
+        LBL_theWinner.setText(theWinner);
         LBL_scoreWinner=findViewById(R.id.LBL_scoreWinner);
-        String sessionId1 = getIntent().getStringExtra("SCORE");
-        LBL_scoreWinner.setText(sessionId1);
+        String scoreWinner = getIntent().getStringExtra("SCORE");
+        LBL_scoreWinner.setText(scoreWinner);
         BTN_newGame=findViewById(R.id.BTN_newGame);
         BTN_newGame.setOnClickListener(new View.OnClickListener() {
             @Override

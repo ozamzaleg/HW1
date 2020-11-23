@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/Theme.Oz_Tal_Application_Project">
-        <activity android:name=".Winner"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Game"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".StartGame"
+        <activity
+            android:name=".Winner"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Game"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".StartGame"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

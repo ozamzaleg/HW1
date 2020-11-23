@@ -12,7 +12,7 @@
         android:id="@+id/BTN_newGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="150dp"
         android:layout_centerHorizontal="true"
         android:padding="24dp"
         android:text="New Game"

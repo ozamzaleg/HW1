@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class StartGame extends AppCompatActivity {
     private Button BTN_newGame;
+    private Button BTN_records;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +24,6 @@ public class StartGame extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }

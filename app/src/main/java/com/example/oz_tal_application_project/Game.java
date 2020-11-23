@@ -93,14 +93,14 @@ public class Game extends AppCompatActivity {
             if (counterPlayer2 < counterPlayer1) {
                 playSound(R.raw.snd_win);
                 intent.putExtra("WINNER", "PLAYER 1 WIN");
-                intent.putExtra("SCORE", "SCORE:"+counterPlayer1);
+                intent.putExtra("SCORE","SCORE:"+ counterPlayer1);
             } else if ( counterPlayer1 < counterPlayer2) {
                 playSound(R.raw.snd_win);
                 intent.putExtra("WINNER", "PLAYER 2 WIN");
-                intent.putExtra("SCORE", "SCORE:"+counterPlayer2);
+                intent.putExtra("SCORE", "SCORE:"+ counterPlayer2);
             } else if ( counterPlayer1 == counterPlayer2) {
                 intent.putExtra("WINNER", "TIE");
-                intent.putExtra("SCORE", "SCORE:"+counterPlayer2);
+                intent.putExtra("SCORE", "SCORE:"+ counterPlayer2);
             }
             startActivity(intent);
             finish();
