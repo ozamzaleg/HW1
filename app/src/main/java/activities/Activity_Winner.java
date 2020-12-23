@@ -52,7 +52,7 @@ public class Activity_Winner extends Activity_Base {
 
             @Override
             public void onLocationFailure(String msg) {
-                Toast.makeText(Activity_Winner.this ,msg+" ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Activity_Winner.this ,msg, Toast.LENGTH_SHORT).show();
             }
         });
     }

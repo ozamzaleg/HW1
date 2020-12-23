@@ -1,7 +1,9 @@
 package activities;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -9,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
 
 import objects.GameManger;
 
@@ -39,11 +44,18 @@ public class Activity_Game extends Activity_Base {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        denyLocation();
         findByView();
         setName();
         image();
     }
 
+
+    private void denyLocation() {
+        if (ActivityCompat.checkSelfPermission(Activity_Game.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
+            Toast.makeText(Activity_Game.this, "The location must be activated to show a location on the map", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     private void findByView() {
         name_Number1 = findViewById(R.id.LBL_player1);
