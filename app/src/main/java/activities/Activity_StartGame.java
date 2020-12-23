@@ -20,7 +20,6 @@ public class Activity_StartGame extends Activity_Base {
     private Button BTN_Setting;
     private String name1 = null;
     private String name2 = null;
-    private boolean switchResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +51,6 @@ public class Activity_StartGame extends Activity_Base {
             }
         });
     }
-
 
     private void findByView() {
         BTN_newGame = findViewById(R.id.BTN_newGame);
