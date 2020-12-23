@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartGame"
+    tools:context="activities.Activity_StartGame"
     android:background="@drawable/background">
 
 
@@ -12,10 +12,37 @@
         android:id="@+id/BTN_newGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="60dp"
         android:layout_centerHorizontal="true"
         android:padding="24dp"
         android:text="New Game"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:backgroundTint="#FFEB3B"/>
+
+    <Button
+        android:id="@+id/BTN_Records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:padding="24dp"
+        android:text="RECORDS"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:backgroundTint="#FFEB3B"/>
+    <Button
+        android:id="@+id/BTN_Setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:layout_centerHorizontal="true"
+        android:padding="24dp"
+        android:text="SETTING"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textAllCaps="false"

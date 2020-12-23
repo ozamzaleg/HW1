@@ -1,3 +1,4 @@
 <resources>
     <string name="hello_world">Hello Round World!</string>
+    <string name="google_maps_key">AIzaSyBChzdW6sqYFDUu_KD4EzwjNYT14ZlXCYs</string>
 </resources>

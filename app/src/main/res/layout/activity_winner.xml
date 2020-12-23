@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/winner"
-    tools:context=".Winner">
+    tools:context="activities.Activity_Winner">
 
     <TextView
         android:id="@+id/LBL_theWinner"
@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:id="@+id/BTN_newGame"
+        android:id="@+id/BTN_top_ten_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -36,7 +36,7 @@
         android:layout_centerHorizontal="true"
         android:textAllCaps="true"
         android:textColor="@color/black"
-        android:text="back to new game"
+        android:text="TOP TEN LIST"
         android:textSize="25sp" />
 
 </RelativeLayout>

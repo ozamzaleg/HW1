@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.oz_tal_application_project">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
+        android:name=".utils.App"
         android:allowBackup="true"
         android:icon="@drawable/poker"
         android:label="@string/app_name"
@@ -10,14 +16,25 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/Theme.Oz_Tal_Application_Project">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name="activities.Activity_Setting"
+            android:screenOrientation="landscape"></activity>
+
+        <activity android:name="activities.Activity_Base" />
         <activity
-            android:name=".Winner"
+            android:name="activities.Activity_TopTen"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Game"
+            android:name="activities.Activity_Winner"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".StartGame"
+            android:name="activities.Activity_Game"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="activities.Activity_StartGame"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

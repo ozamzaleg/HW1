@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="activities.Activity_StartGame"
+    android:background="#FFFFFE">
+
+<TextView
+    android:id="@+id/LBL_Players"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:padding="15dp"
+    android:hint="CHANGE NAME"
+    android:textStyle="bold"
+    android:textColorHint="#FFEB3B"
+    android:textAllCaps="false"
+    android:textSize="22sp"
+    android:backgroundTint="#FFFFFE" />
+    <EditText
+        android:id="@+id/EDT_Player_Number1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LBL_Players"
+        android:layout_centerHorizontal="true"
+        android:padding="15dp"
+        android:hint="ENTER PLAYER NUMBER 1 "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:backgroundTint="#FFFFFE"/>
+
+    <EditText
+        android:id="@+id/EDT_Player_Number2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EDT_Player_Number1"
+        android:layout_centerHorizontal="true"
+        android:padding="15dp"
+        android:hint="ENTER PLAYER NUMBER 2"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:backgroundTint="#FFFFFF"/>
+
+    <Switch
+        android:id="@+id/SW_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EDT_Player_Number2"
+        android:layout_centerHorizontal="true"
+        android:padding="24dp"
+        android:text="Audio" />
+
+    <Button
+        android:id="@+id/BTN_APPLY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="24dp"
+        android:hint="APPLY"
+        android:textStyle="bold"
+        android:textColorHint="@color/black"
+        android:textAllCaps="false"
+        android:textSize="22sp"
+        android:backgroundTint="#FFEB3B"/>
+
+
+</RelativeLayout>

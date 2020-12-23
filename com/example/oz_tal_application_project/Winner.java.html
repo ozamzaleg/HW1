@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Winner.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Winner.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.oz_tal_application_project</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Winner </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+    <span class="s0">private </span><span class="s1">TextView LBL_theWinner</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Button BTN_newGame</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">TextView LBL_scoreWinner</span><span class="s0">;</span>
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_winner)</span><span class="s0">;</span>
+        <span class="s1">LBL_theWinner=findViewById(R.id.LBL_theWinner)</span><span class="s0">;</span>
+        <span class="s1">String sessionId = getIntent().getStringExtra(</span><span class="s2">&quot;WINNER&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">LBL_theWinner.setText(sessionId)</span><span class="s0">;</span>
+        <span class="s1">LBL_scoreWinner=findViewById(R.id.LBL_scoreWinner)</span><span class="s0">;</span>
+        <span class="s1">String sessionId1 = getIntent().getStringExtra(</span><span class="s2">&quot;SCORE&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">LBL_scoreWinner.setText(sessionId1)</span><span class="s0">;</span>
+        <span class="s1">BTN_newGame=findViewById(R.id.BTN_newGame)</span><span class="s0">;</span>
+        <span class="s1">BTN_newGame.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(Winner.</span><span class="s0">this, </span><span class="s1">StartGame.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+                <span class="s1">finish()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/banner"
-    tools:context=".StartGame">
+    tools:context="activities.Activity_StartGame">
 
-
-    <Button
-        android:id="@+id/BTN_Game"
-        android:layout_width="80dp"
-        android:layout_height="72dp"
-        android:layout_alignParentBottom="true"
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressTint="#FFEB3B"
+        android:scaleX="0.7"
+        android:scaleY="2.5"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:padding="24dp"
-        android:textAllCaps="false"
-        android:textSize="34sp"
-        android:backgroundTint="#F44336"
-        app:icon="@android:drawable/ic_media_play"
-        android:soundEffectsEnabled="false"/>
+        android:layout_marginTop="40dp"
+        android:max="26" />
 
     <TextView
         android:id="@+id/LBL_player1"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:text="PLAYER 1:"
         android:textColor="@color/white"
         android:textSize="40dp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/LBL_player2"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:text="PLAYER 2:"
-        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="40dp"
         android:textStyle="bold" />
@@ -49,7 +43,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/LBL_player1"
         android:layout_marginTop="20dp"
-        android:textAllCaps="true"
         android:layout_marginStart="30dp"
         android:textColor="@color/white"
         android:textSize="30sp"
