@@ -3,18 +3,17 @@ package objects;
 public class Record {
     private String name;
     private int score;
-    private double latitude=0;
-    private double longitude=0;
+    private double latitude = 0;
+    private double longitude = 0;
 
-    public Record()
-    {
+    public Record() {
     }
 
     public Record(String name, int score, double latitude, double longitude) {
         this.name = name;
         this.score = score;
         this.latitude = latitude;
-        this.longitude=longitude;
+        this.longitude = longitude;
     }
 
     public double getLatitude() {
@@ -56,7 +55,7 @@ public class Record {
 
     @Override
     public String toString() {
-        return "name:" + name  +
-                ",his score:"+score;
+        return "name:" + name +
+                ",his score:" + score;
     }
 }

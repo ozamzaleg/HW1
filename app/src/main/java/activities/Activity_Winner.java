@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.example.oz_tal_application_project.R;
 import com.example.oz_tal_application_project.utils.Constans;
 import com.example.oz_tal_application_project.utils.MySP;
@@ -14,6 +15,7 @@ import com.example.oz_tal_application_project.utils.getLocation;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
+
 import callbacks.CallBack_Location;
 import objects.Record;
 import objects.TopTen;
@@ -52,7 +54,7 @@ public class Activity_Winner extends Activity_Base {
 
             @Override
             public void onLocationFailure(String msg) {
-                Toast.makeText(Activity_Winner.this ,msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Activity_Winner.this, msg, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -39,6 +41,8 @@ public class Activity_Game extends Activity_Base {
     private GameManger gameManger;
     private ProgressBar progressBar;
     private int progressStatus = 0;
+    private Button BTN_Start;
+    private boolean gameStart = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +50,21 @@ public class Activity_Game extends Activity_Base {
         setContentView(R.layout.activity_game);
         denyLocation();
         findByView();
+        initView();
         setName();
         image();
     }
 
+    private void initView() {
+        BTN_Start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gameStart = true;
+                start();
+                BTN_Start.setVisibility(View.GONE);
+            }
+        });
+    }
 
     private void denyLocation() {
         if (ActivityCompat.checkSelfPermission(Activity_Game.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
@@ -65,6 +80,7 @@ public class Activity_Game extends Activity_Base {
         IMG_Card1 = findViewById(R.id.IMG_Card1);
         IMG_Card2 = findViewById(R.id.IMG_Card2);
         progressBar = findViewById(R.id.pBar);
+        BTN_Start = findViewById(R.id.BTN_Start);
     }
 
     private void setName() {
@@ -85,7 +101,6 @@ public class Activity_Game extends Activity_Base {
         }
     }
 
-    @SuppressLint("ResourceAsColor")
     public void updateImage() {
         if (gameManger.getNumbersOfCards() != 0) {
             LBL_counterPlayer2.setTextColor(Color.WHITE);
@@ -104,7 +119,7 @@ public class Activity_Game extends Activity_Base {
                 LBL_counterPlayer1.setTextColor(Color.YELLOW);
                 LBL_counterPlayer1.setText("" + gameManger.getCounterPlayer1());
             }
-             if(cards.equals(Constans.PLAYER2)) {
+            if (cards.equals(Constans.PLAYER2)) {
                 LBL_counterPlayer2.setTextColor(Color.YELLOW);
                 LBL_counterPlayer2.setText("" + gameManger.getCounterPlayer2());
             }
@@ -135,6 +150,9 @@ public class Activity_Game extends Activity_Base {
     ScheduledFuture<?> scheduledFuture;
 
     public void start() {
+        if (!gameStart) {
+            return;
+        }
         scheduledFuture = new ScheduledThreadPoolExecutor(5).scheduleWithFixedDelay(new Runnable() {
             @Override
             public void run() {
@@ -156,7 +174,9 @@ public class Activity_Game extends Activity_Base {
     }
 
     private void stop() {
-        scheduledFuture.cancel(false);
+        if (gameStart) {
+            scheduledFuture.cancel(false);
+        }
     }
 
     @Override

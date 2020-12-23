@@ -5,15 +5,19 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationSettingsRequest;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Looper;
+
 import androidx.core.app.ActivityCompat;
+
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+
 import callbacks.CallBack_Location;
 
 
@@ -44,8 +48,8 @@ public class getLocation {
     }
 
     public void getCurrentLocation(CallBack_Location callBack_Location) {
-        LocationManager locationManager = (LocationManager)context.getSystemService(context.LOCATION_SERVICE);
-        if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+        LocationManager locationManager = (LocationManager) context.getSystemService(context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             callBack_Location.onLocationFailure("you must turn on your location");
             return;
         }
@@ -55,11 +59,10 @@ public class getLocation {
         this.locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
-                Location location=locationResult.getLastLocation();
-                if(location!=null) {
+                Location location = locationResult.getLastLocation();
+                if (location != null) {
                     callBack_Location.onLocationSuccess(location.getLatitude(), location.getLongitude());
-                }
-                else {
+                } else {
                     callBack_Location.onLocationFailure("can not get your location");
                 }
             }

@@ -27,20 +27,19 @@ public class TopTen {
     }
 
     public void topTenRecords(Record record) {
-        boolean inTopTen=false;
+        boolean inTopTen = false;
         if (topTenPlayer.isEmpty()) {
             topTenPlayer.add(record);
-        }
-        else {
-            for (int i = 0;!inTopTen&&i < topTenPlayer.size(); i++) {
+        } else {
+            for (int i = 0; !inTopTen && i < topTenPlayer.size(); i++) {
                 if (topTenPlayer.get(i).getScore() < record.getScore()) {
                     topTenPlayer.add(i, record);
-                    inTopTen=true;
+                    inTopTen = true;
                 }
             }
             if (topTenPlayer.size() > 10) {
-                topTenPlayer.remove(topTenPlayer.size()-1);
-            } else if(!inTopTen) {
+                topTenPlayer.remove(topTenPlayer.size() - 1);
+            } else if (!inTopTen) {
                 topTenPlayer.add(record);
             }
         }

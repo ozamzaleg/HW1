@@ -22,10 +22,10 @@ public class Activity_TopTen extends AppCompatActivity {
 
         fragment_list = new fragment_List();
         fragment_list.setCallBack_top(callback_Top);
-        getSupportFragmentManager().beginTransaction().add(R.id.main_LAY_list,fragment_list).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_LAY_list, fragment_list).commit();
 
         fragment_map = new fragment_Map();
-        getSupportFragmentManager().beginTransaction().add(R.id.main_LAY_map,fragment_map).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_LAY_map, fragment_map).commit();
     }
 
 

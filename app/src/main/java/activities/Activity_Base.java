@@ -21,16 +21,19 @@ public class Activity_Base extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
     }
+
     protected MediaPlayer mp;
+
     protected void playSound(int rawSound) {
-        if(!MySP.getInstance().getBoolean(MySP.KEYS.SWITCH,true)) {
+        if (!MySP.getInstance().getBoolean(MySP.KEYS.SWITCH, true)) {
             return;
         }
-            if (mp != null) {
+        if (mp != null) {
             try {
                 mp.reset();
                 mp.release();
-            } catch (Exception ex) { }
+            } catch (Exception ex) {
+            }
         }
 
         mp = MediaPlayer.create(this, rawSound);
@@ -59,8 +62,7 @@ public class Activity_Base extends AppCompatActivity {
             if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis()) {
                 super.onBackPressed();
                 return;
-            }
-            else {
+            } else {
                 Toast.makeText(this, "Tap back button again to exit", Toast.LENGTH_SHORT).show();
             }
 

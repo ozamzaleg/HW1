@@ -47,18 +47,17 @@ public class Activity_Setting extends AppCompatActivity {
         Intent intent = new Intent(Activity_Setting.this, Activity_StartGame.class);
         if (name_Number1.getText().toString().length() > 10 || name_Number2.getText().toString().length() > 10) {
             Toast.makeText(Activity_Setting.this, Constans.MSG, Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             switchResult = sw_Switch.isChecked();
             MySP.getInstance().putBoolean(MySP.KEYS.SWITCH, switchResult);
-            if (name_Number1.getText().toString().isEmpty()||name_Number1.getText().toString().trim().length()==0) {
+            if (name_Number1.getText().toString().isEmpty() || name_Number1.getText().toString().trim().length() == 0) {
                 MySP.getInstance().putString(MySP.KEYS.NAME1, Constans.PLAYER1);
             } else {
                 name1 = name_Number1.getText().toString();
                 MySP.getInstance().putString(MySP.KEYS.NAME1, name1);
             }
-            if (name_Number2.getText().toString().isEmpty()||name_Number2.getText().toString().trim().length()==0) {
-                MySP.getInstance().putString(MySP.KEYS.NAME2,Constans.PLAYER2);
+            if (name_Number2.getText().toString().isEmpty() || name_Number2.getText().toString().trim().length() == 0) {
+                MySP.getInstance().putString(MySP.KEYS.NAME2, Constans.PLAYER2);
             } else {
                 name2 = name_Number2.getText().toString();
                 MySP.getInstance().putString(MySP.KEYS.NAME2, name2);

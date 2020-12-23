@@ -10,7 +10,7 @@ public class MySP {
         public static final String SWITCH = "KEY_SWITCH";
         public static final String NAME1 = "KEY_MAME1";
         public static final String NAME2 = "KEY_NAME2";
-        public static final String MY_SP="MY_SP";
+        public static final String MY_SP = "MY_SP";
     }
 
     private static MySP instance;
@@ -47,7 +47,7 @@ public class MySP {
     }
 
     public boolean getBoolean(String key, boolean def) {
-        return prefs.getBoolean(key ,def);
+        return prefs.getBoolean(key, def);
     }
 
     public void removeKey(String key) {

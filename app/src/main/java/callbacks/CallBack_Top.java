@@ -1,5 +1,5 @@
 package callbacks;
 
 public interface CallBack_Top {
-        void addMarkerToMap(double lat, double lon);
-    }
+    void addMarkerToMap(double lat, double lon);
+}
